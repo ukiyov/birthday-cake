@@ -56,7 +56,7 @@ a {
     border-radius: 10px;
     padding: 5px;
     width: 200px;
-    font-family: 'Schoolbell', cursive;
+    font-family: 'Schoolbell', Arial, Helvetica, sans-serif;
     font-size: xx-large;
     margin-right: 10px;
 }
@@ -134,7 +134,7 @@ flex-direction: row-reverse;
     right: 0;
     font-size: medium;
     align-items: center;
-    display: flex;
+    display: flex; 
     margin-bottom:0.5rem;
     /* background-color: #FFF; */
     /* box-shadow: 0 0 0.5em 0.5em white;  */

@@ -26,10 +26,8 @@
 
             window.onload = function() {
                 document.body.addEventListener("click", function () {
-                    if(document.getElementById('bgm').play())
-                    {
-                        document.getElementById("music").style.display = "flex"
-                    }
+                    document.getElementById('bgm').play()
+                    document.getElementById("music").style.display = "flex"
                 })
                 document.getElementById("music").addEventListener("click",openLink)
                 typeWriter(); 
@@ -42,9 +40,9 @@
             <p id="prompt"></p>
             <div id="start"></div>
             <div id="chooseSize" class="hoverSize column" style="display: none;">
-                <div><figure><img id="circle" src="././assets/circle.png" width="103" height="77"></figure></div>
-                <div><figure><img id="triangle" src="././assets/triangle.png" width="103" height="77"></figure></div>
-                <div><figure><img id="square" src="././assets/square.png" width="103" height="77"></figure></div>
+                <div><figure><img style="cursor: pointer;" id="circle" src="././assets/circle.png" width="103" height="77"></figure></div>
+                <div><figure><img style="cursor: pointer;" id="triangle" src="././assets/triangle.png" width="103" height="77"></figure></div>
+                <div><figure><img style="cursor: pointer;" id="square" src="././assets/square.png" width="103" height="77"></figure></div>
             </div>
             <div id="chooseFlavor" class="hoverSize column" style="display: none;">
                 <div>
@@ -53,7 +51,7 @@
                         <img src="././assets/vanilla flavor.png" class="base" width="103" height="77" alt="Base Image">
                         <img class="overlay topSize" width="103" height="77" alt="Overlay Image">
                         <div class="overlay">
-                          <img class="overlay sizeBase" id="vanilla" width="103" height="77" alt="Overlay Image">
+                          <img style="cursor: pointer;" class="overlay sizeBase" id="vanilla" width="103" height="77" alt="Overlay Image">
                         </div>
                     </figure>
                 </div>              
@@ -62,7 +60,7 @@
                         <img src="././assets/chocolate flavor.png" class="base" width="103" height="77" alt="Base Image">
                         <img class="overlay topSize" width="103" height="77" alt="Overlay Image">
                         <div class="overlay">
-                          <img class="overlay sizeBase" id="chocolate1" width="103" height="77" alt="Overlay Image">
+                          <img style="cursor: pointer;" class="overlay sizeBase" id="chocolate1" width="103" height="77" alt="Overlay Image">
                         </div>
                     </figure>
                 </div> 
@@ -71,7 +69,7 @@
                         <img src="././assets/red velvet flavor.png" class="base" width="103" height="77" alt="Base Image">
                         <img class="overlay topSize" width="103" height="77" alt="Overlay Image">
                         <div class="overlay">
-                          <img class="overlay sizeBase" id="red velvet" width="103" height="77" alt="Overlay Image">
+                          <img style="cursor: pointer;" class="overlay sizeBase" id="red velvet" width="103" height="77" alt="Overlay Image">
                         </div>
                     </figure>
                 </div> 
@@ -83,7 +81,7 @@
                         <img class="overlay topSize" width="103" height="77" alt="Overlay Image">
                         <img class="overlay" src="././assets/cream filling.png" width="103" height="77" alt="Overlay Image">
                         <div class="overlay">
-                          <img class="overlay sizeBase" id="cream" width="103" height="77" alt="Overlay Image">
+                          <img style="cursor: pointer;" class="overlay sizeBase" id="cream" width="103" height="77" alt="Overlay Image">
                         </div>
                     </figure>
                 </div>
@@ -93,7 +91,7 @@
                         <img class="overlay topSize" width="103" height="77" alt="Overlay Image">
                         <img class="overlay" src="././assets/chocolate filling.png" width="103" height="77" alt="Overlay Image">
                         <div class="overlay">
-                          <img class="overlay sizeBase" id="chocolate2" width="103" height="77" alt="Overlay Image">
+                          <img style="cursor: pointer;" class="overlay sizeBase" id="chocolate2" width="103" height="77" alt="Overlay Image">
                         </div>
                     </figure>
                 </div>
@@ -103,15 +101,15 @@
                         <img class="overlay topSize" width="103" height="77" alt="Overlay Image">
                         <img class="overlay" src="././assets/strawberry filling.png" width="103" height="77" alt="Overlay Image">
                         <div class="overlay">
-                          <img class="overlay sizeBase" id="strawberry1" width="103" height="77" alt="Overlay Image">
+                          <img style="cursor: pointer;" class="overlay sizeBase" id="strawberry1" width="103" height="77" alt="Overlay Image">
                         </div>
                     </figure>
                 </div>
             </div>
             <div id="chooseTopping" class="hoverSize column" style="display: none;">
-                <div><figure><img id="strawberry2" src="././assets/strawberry topping thumbnail.png" width="103" height="103"></figure></div>
-                <div><figure><img id="sprinkle" src="././assets/sprinkle topping thumbnail.png" width="103" height="103"></figure></div>
-                <div><figure><img id="oreo" src="././assets/oreo topping thumbnail.png" width="103" height="103"></figure></div>
+                <div><figure><img style="cursor: pointer;" id="strawberry2" src="././assets/strawberry topping thumbnail.png" width="103" height="103"></figure></div>
+                <div><figure><img style="cursor: pointer;" id="sprinkle" src="././assets/sprinkle topping thumbnail.png" width="103" height="103"></figure></div>
+                <div><figure><img style="cursor: pointer;" id="oreo" src="././assets/oreo topping thumbnail.png" width="103" height="103"></figure></div>
             </div>
             <div id="enterName"></div>
         </div>
@@ -130,7 +128,7 @@
             </div>
             <div><p id="finalText"></p></div>
         </div>
-        <div style="cursor: pointer;" id="music" style="display: none;">
+        <div style="cursor: pointer; display: none;" id="music">
             <img src="././assets/sound.gif" width="30" height="30" style="margin-right:1rem;">
             <p id="songTitle" style="margin-right:1rem;"></a>it's 6pm but i miss u already</p>
             <audio id="bgm" type="mp3"src="./assets/bgm.mp3"></audio>
@@ -152,6 +150,7 @@
                 var span = document.createElement("span");
                 span.textContent = "start";
                 link.appendChild(span);
+                link.style.cursor = "pointer"
                     
                 link.addEventListener("click", function() {
                     chooseSize();
@@ -216,10 +215,7 @@
 
             function chooseFilling() {
                 var imageElements = document.getElementsByClassName("flavorSide");
-                console.log(imageElements)
                 for (var i = 0; i < imageElements.length; i++) {
-                    
-                    console.log("./assets/"+flavor+" flavor.png")
                     imageElements[i].src = "./assets/"+flavor+" flavor.png";
                 }
                 var topSize = size == "triangle" ? "2" : "1";
@@ -280,6 +276,7 @@
                 var span = document.createElement("span");
                 span.textContent = "submit";
                 link.appendChild(span);
+                link.style.cursor = "pointer"
                 link.addEventListener("click", function() {
                     name = document.getElementById("name field").value;
                     end();
@@ -302,12 +299,6 @@
                 document.getElementById("finalText").innerHTML = "#HBD<br>"+name+"!!"
                 document.body.style.backgroundImage = "url('./assets/bg copy.png')";
                 downloadImageButton()
-
-                console.log(name)
-                console.log(size)
-                console.log(flavor)
-                console.log(filling)
-                console.log(topping)
             }
 
             function openLink()
@@ -326,11 +317,12 @@
                     
                 link.addEventListener("click", function() {
                     ele = document.body
-                    ele = ele.appendChild(document.getElementById("endScene"))
+                    ele.appendChild(document.getElementById("endScene"))
+                    console.log(ele)
                     html2canvas(ele,{ allowTaint: true }).then(canvas => {
                     const a = document.createElement("a");
                     a.href = canvas.toDataURL();
-                    a.download = "screenshot.jpg";
+                    a.download = "birthday cake.jpg";
                     a.click();
                     });
                 });
