@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
-        <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+        <title>Birthday Cake</title>
         <link href="https://fonts.googleapis.com/css2?family=Schoolbell&display=swap" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -24,25 +23,15 @@
                     setTimeout(typeWriter, speed);
                 } 
             }
+
             window.onload = function() {
-                document.getElementById("chooseSize").style.display = "none"
-                document.getElementById("chooseFlavor").style.display = "none"
-                document.getElementById("chooseFilling").style.display = "none"
-                document.getElementById("chooseTopping").style.display = "none"
-                document.getElementById("endScene").style.display = "none"
-                document.getElementById("music").style.display = "none"
-                
                 document.body.addEventListener("click", function () {
                     if(document.getElementById('bgm').play())
                     {
                         document.getElementById("music").style.display = "flex"
                     }
-                    
-                    
                 })
-
                 document.getElementById("music").addEventListener("click",openLink)
-                
                 typeWriter(); 
             };
         </script>
@@ -52,12 +41,12 @@
         <div id="startScene" class="container">
             <p id="prompt"></p>
             <div id="start"></div>
-            <div id="chooseSize" class="hoverSize column">
+            <div id="chooseSize" class="hoverSize column" style="display: none;">
                 <div><figure><img id="circle" src="././assets/circle.png" width="103" height="77"></figure></div>
                 <div><figure><img id="triangle" src="././assets/triangle.png" width="103" height="77"></figure></div>
                 <div><figure><img id="square" src="././assets/square.png" width="103" height="77"></figure></div>
             </div>
-            <div id="chooseFlavor" class="hoverSize column">
+            <div id="chooseFlavor" class="hoverSize column" style="display: none;">
                 <div>
                     <figure class="container2">
                         
@@ -87,7 +76,7 @@
                     </figure>
                 </div> 
             </div>
-            <div id="chooseFilling" class="hoverSize column">
+            <div id="chooseFilling" class="hoverSize column" style="display: none;">
                 <div>
                     <figure class="container2">
                         <img class="base flavorSide" width="103" height="77" alt="Base Image">
@@ -119,14 +108,14 @@
                     </figure>
                 </div>
             </div>
-            <div id="chooseTopping" class="hoverSize column">
+            <div id="chooseTopping" class="hoverSize column" style="display: none;">
                 <div><figure><img id="strawberry2" src="././assets/strawberry topping thumbnail.png" width="103" height="103"></figure></div>
                 <div><figure><img id="sprinkle" src="././assets/sprinkle topping thumbnail.png" width="103" height="103"></figure></div>
                 <div><figure><img id="oreo" src="././assets/oreo topping thumbnail.png" width="103" height="103"></figure></div>
             </div>
             <div id="enterName"></div>
         </div>
-        <div id="endScene" class="column">
+        <div id="endScene" class="column" style="display: none;">
             <div>
                 <figure class="container2">
                     <img class="base flavorSide" width="206" height="154" alt="Base Image">
@@ -141,12 +130,12 @@
             </div>
             <div><p id="finalText"></p></div>
         </div>
-        <div style="cursor: pointer;" id="music">
+        <div style="cursor: pointer;" id="music" style="display: none;">
             <img src="././assets/sound.gif" width="30" height="30" style="margin-right:1rem;">
             <p id="songTitle" style="margin-right:1rem;"></a>it's 6pm but i miss u already</p>
             <audio id="bgm" type="mp3"src="./assets/bgm.mp3"></audio>
         </div>
-        <div style="cursor: pointer;" id="downloadImage">
+        <div style="cursor: pointer;" id="downloadImage" style="display: none;">
         </div>
         
         <script>
@@ -336,7 +325,9 @@
                 link.appendChild(span);
                     
                 link.addEventListener("click", function() {
-                    html2canvas(document.getElementById("endScene"),{ allowTaint: true }).then(canvas => {
+                    ele = document.body
+                    ele = ele.appendChild(document.getElementById("endScene"))
+                    html2canvas(ele,{ allowTaint: true }).then(canvas => {
                     const a = document.createElement("a");
                     a.href = canvas.toDataURL();
                     a.download = "screenshot.jpg";

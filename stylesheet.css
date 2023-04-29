@@ -11,7 +11,7 @@ body {
     transition: background-image 1.5s;
     background-color: rgba(255,255,255,0.4);
     background-blend-mode: lighten;
-    
+    overflow: hidden
 }
 
 .container {
@@ -113,9 +113,9 @@ a {
 }
 
 #enterName {
-display: flex; /* Use flexbox layout */
-align-items: center; /* Align items vertically in the center */
-flex-direction: row-reverse; /* Align items to the right */
+display: flex; 
+align-items: center; 
+flex-direction: row-reverse; 
 }
 
 #endScene {
@@ -123,8 +123,8 @@ flex-direction: row-reverse; /* Align items to the right */
     align-items: center;
     display: flex;
     margin-right: 100px;
-    background-color: #FFF; 
-    box-shadow: 0 0 0.2em 0.2em white;
+    /* background-color: #FFF;  */
+    /* box-shadow: 0 0 0.2em 0.2em white; */
 
 }
 
@@ -136,8 +136,8 @@ flex-direction: row-reverse; /* Align items to the right */
     align-items: center;
     display: flex;
     margin-bottom:0.5rem;
-    background-color: #FFF;
-    box-shadow: 0 0 0.5em 0.5em white; 
+    /* background-color: #FFF; */
+    /* box-shadow: 0 0 0.5em 0.5em white;  */
 }
 
 #downloadImage {
@@ -147,6 +147,6 @@ flex-direction: row-reverse; /* Align items to the right */
     align-items: center;
     display: flex;
     margin-bottom:10rem;
-    background-color: #FFF;
-    box-shadow: 0 0 0.5em 0.5em white; 
+    /* background-color: #FFF; */
+    /* box-shadow: 0 0 0.5em 0.5em white;  */
 }
