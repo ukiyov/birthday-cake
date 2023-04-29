@@ -28,6 +28,7 @@ Capture the beauty and artistry of your cake by taking a screenshot and download
 - [ ] Add smooth transitions
 - [ ] Autoplay music (afaik browsers don't support this)
 - [ ] Dynamic background image
+- [ ] Optimize mobile version
 
 ## Acknowledgements
 
