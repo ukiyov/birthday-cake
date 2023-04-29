@@ -316,14 +316,21 @@
                 link.appendChild(span);
                     
                 link.addEventListener("click", function() {
-                    ele = document.body
-                    ele.appendChild(document.getElementById("endScene"))
-                    console.log(ele)
-                    html2canvas(ele,{ allowTaint: true }).then(canvas => {
-                    const a = document.createElement("a");
-                    a.href = canvas.toDataURL();
-                    a.download = "birthday cake.jpg";
-                    a.click();
+                    html2canvas(document.body,{ 
+                        ignoreElements: function(element) {
+                            var excludedIds = ['music', 'downloadImage'];
+                            if (element.tagName === 'DIV') {
+                                if (excludedIds.includes(element.id)) {
+                                    return true; 
+                                }
+                            }
+                            return false; 
+                        }
+                    }).then(canvas => {
+                        const a = document.createElement("a");
+                        a.href = canvas.toDataURL();
+                        a.download = "birthday cake.jpg";
+                        a.click();
                     });
                 });
                     
@@ -335,8 +342,3 @@
     </body>
 
 </html>
-
-
-<!-- https://codemyui.com/hand-sketched-3d-wireframe-buttons/ -->
-<!-- https://codepen.io/nxworld/pen/ZYNOBZ -->
-<!-- https://www.codingnepalweb.com/how-to-take-screenshot-using-javascript/ -->
