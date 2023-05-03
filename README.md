@@ -30,6 +30,12 @@ Capture the beauty and artistry of your cake by taking a screenshot and download
 - [ ] Dynamic background image
 - [ ] Optimize mobile version
 
+## Key Learnings
+* HTML
+* CSS
+* Javascript
+* GitHub Page
+
 ## Acknowledgements
 
 * [Main page background music](https://music.163.com/#/song?id=1890756154)
