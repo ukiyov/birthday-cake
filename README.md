@@ -45,4 +45,4 @@ Capture the beauty and artistry of your cake by taking a screenshot and download
 * [Screenshot Function](https://www.codingnepalweb.com/how-to-take-screenshot-using-javascript/)
 * And [ChatGPT](https://chat.openai.com/) for helping me throughout this project (including writing the README)
 
-For further inquiries, please contact jasminelu23@gmail.com
+For further inquiries, please contact leznuparutube@gmail.com
